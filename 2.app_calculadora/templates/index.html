@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="text-center">Calculadora Aritmetica</h1>
+
+    <form action="/" method="post">
+
+        <div class="row">
+            <div class="col-md-6">
+                <input type="number" class="form-control" name="n1" placeholder="Ingresa el primer numero" aria-label="Ingresa el primer numero">
+            </div>
+            <div class="col-md-6">
+                <input type="number" class="form-control" name="n2" placeholder="Ingresa el segundo numero" aria-label="Ingresa el segundo numero">
+            </div>
+            <div class="row py-3">
+                <div class=" d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Calcular</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row py-2">
+        <div class="col">
+            <h3><img src="{{ url_for('static', filename='img/mas.png') }}" width="20" height="20"> La suma es: {{total_suma}}</h3>
+            <h3><img src="{{ url_for('static', filename='img/eliminar.png') }}" width="20" height="20"> La resta es: {{total_resta}}</h3>
+            <h3><img src="{{ url_for('static', filename='img/multi.png') }}" width="20" height="20"> La multiplicacion es: {{total_multiplicacion}}</h3>
+            <h3><img src="{{ url_for('static', filename='img/divi.png') }}" width="27" >La division es: {{total_division}}</h3>
+        </div>
+    </div>
+{% endblock %}

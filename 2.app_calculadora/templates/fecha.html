@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="text-center ">Calculadora de Años Transcurridos</h1>
+  <br>
+
+<form action="/fecha" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <input type="number" class="form-control" name="año1" placeholder="Ingresa el primer año" aria-label="Ingresa el primer año" required>
+        </div>
+        <div class="col-md-6">
+            <input type="number" class="form-control" name="año2" placeholder="Ingresa el segundo año" aria-label="Ingresa el segundo año" required>
+        </div>
+        <div class="row py-3">
+            <div class=" d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Calcular</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="row py-2">
+    <div class="col">
+        <h3>Años transcurridos: {{años_transcurridos}} años</h3>
+    </div>
+</div>
+{% endblock %}
